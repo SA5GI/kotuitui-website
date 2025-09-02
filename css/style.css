@@ -1,0 +1,231 @@
+/* ---------------------------------- */
+/* 1. General Setup & Variables       */
+/* ---------------------------------- */
+
+/* A simple reset to make styling more consistent across browsers. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* We define your brand colors here as CSS variables. 
+  This makes it easy to reuse them and keep the design consistent.
+*/
+:root {
+    --primary: #EEF5FA;      /* Your light background */
+    --secondary: #001C3F;    /* Your dark blue */
+    --comp-yellow: #FFE501;
+    --comp-blue: #399CDB;
+}
+
+body {
+    background-color: var(--primary);
+    /* 'gotham-narrow' is provided by the Adobe Fonts link in the HTML. */
+    font-family: "gotham-narrow", sans-serif;
+}
+
+/* A general container to keep content centered and tidy. */
+.container {
+    width: 100%;
+    max-width: 1280px; /* You can adjust this value */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;  /* 24px */
+    padding-right: 1.5rem; /* 24px */
+}
+
+
+/* ---------------------------------- */
+/* 2. Header and Navigation           */
+/* ---------------------------------- */
+
+header {
+    /* FIXED: Swapped colors to have a light background and dark text */
+    background-color: var(--primary);
+    color: var(--secondary);
+    position: absolute; /* Sits on top of the hero image */
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    border-bottom: 1px solid rgba(0, 28, 63, 0.1); /* Adds a subtle line below the header */
+}
+
+header nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px; /* Gives the nav bar some height */
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* 12px space between icon and text */
+    background: none;
+    border: none;
+    color: inherit; /* This will now be dark blue from the header */
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.logo-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* This trick perfectly centers the logo */
+    transform: translate(-50%, -50%);
+}
+
+.logo-container img {
+    height: 2.5rem; /* 40px */
+}
+
+.social-button {
+    background-color: var(--primary);
+    color: var(--secondary);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0.5rem 1.25rem; /* 8px top/bottom, 20px left/right */
+    border-radius: 6px;
+    /* FIXED: Changed border color to the complementary blue */
+    border: 2px solid var(--comp-blue);
+    text-decoration: none;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-button:hover {
+    /* FIXED: Updated hover state to match a common style */
+    background-color: var(--secondary);
+    color: var(--primary);
+    border-color: var(--secondary);
+}
+
+
+/* ---------------------------------- */
+/* 3. Hero Section                    */
+/* ---------------------------------- */
+
+.hero-section {
+    position: relative;
+    height: 100vh; /* Makes the section take up the full height of the screen */
+    background-color: var(--secondary); /* Fallback color */
+    overflow: hidden; /* Ensures nothing spills out */
+}
+
+.background-image {
+    position: absolute;
+    inset: 0; /* A shorthand for top, right, bottom, left = 0 */
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.4), transparent);
+}
+
+.hero-content {
+    position: relative; /* Sits on top of the gradient */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Pushes content to the bottom */
+    padding-bottom: 4rem; /* 64px */
+}
+
+.hero-text h1 {
+    color: var(--comp-blue);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.1; /* A little tighter line spacing */
+}
+
+.hero-text p {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 28px;
+    margin-top: 0.5rem;
+}
+
+.riders-button {
+    position: absolute;
+    bottom: 3rem; /* 48px */
+    right: 3rem;  /* 48px */
+    background-color: rgba(0, 28, 63, 0.8); /* Dark blue with 80% opacity */
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem; /* 12px top/bottom, 24px left/right */
+    border-radius: 9999px; /* A trick to make it a perfect pill shape */
+    border: 1px solid rgba(238, 245, 250, 0.5);
+    backdrop-filter: blur(4px); /* Creates the "glass" effect */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.riders-button:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+/* ------------------------------------------- */
+/* 4. Responsive Design (Mobile & Tablet)      */
+/* ------------------------------------------- */
+
+/* This block of styles will only apply when the screen width is 768px or less.
+   This is a common breakpoint for tablets and smaller devices. */
+@media (max-width: 768px) {
+
+    /* Use smaller padding on the main container for smaller screens */
+    .container {
+        padding-left: 1rem;  /* 16px */
+        padding-right: 1rem; /* 16px */
+    }
+
+    /* Make the logo in the nav bar a little smaller */
+    .logo-container img {
+        height: 2rem; /* 32px */
+    }
+
+    /* Adjust padding for the social button to save space */
+    .social-button {
+        padding: 0.4rem 0.75rem; /* A bit smaller */
+        font-size: 12px;
+    }
+
+    /* Reduce the hero text font sizes for better readability */
+    .hero-text h1 {
+        font-size: 36px; /* Reduced from 48px */
+    }
+
+    .hero-text p {
+        font-size: 20px; /* Reduced from 28px */
+    }
+
+    /* Reposition the riders button to be more accessible on mobile */
+    .riders-button {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1.5rem; /* 24px */
+        text-align: center;
+    }
+}
+
+/* A second breakpoint for very small mobile screens (e.g., iPhone SE) */
+@media (max-width: 480px) {
+    /* Hide the "Menu" text, leaving only the hamburger icon */
+    .menu-button span {
+        display: none;
+    }
+}
+
