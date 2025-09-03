@@ -712,7 +712,7 @@ footer::before {
     height: 100%;
     background-image: url('../img/SVG/footer-pattern1.svg');
     background-repeat: repeat-x;
-    background-position: -50px 0px;
+    background-position: -32px 0px;
     background-size: auto 90%;
     transform: rotate(1deg);
     opacity: 0.1;
