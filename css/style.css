@@ -68,11 +68,22 @@ html {
 header {
     background-color: var(--primary);
     color: var(--secondary);
-    position: absolute;
+    position: absolute; /* CHANGE THIS to fixed */
     top: 0;
     width: 100%;
     z-index: 10;
     border-bottom: 1px solid rgba(0, 28, 63, 0.1);
+    transition: top 0.5s ease-in-out; /* ADD THIS LINE */
+}
+
+/* NEW: This class is added by JavaScript to hide the header */
+.header-hidden {
+    top: -100px; /* Moves the header up and out of view */
+}
+
+main {
+    /* This pushes the main content down so it doesn't start underneath the fixed header */
+    padding-top: 80px;
 }
 
 header nav {
@@ -136,6 +147,7 @@ header nav {
     height: 100vh;
     background-color: var(--secondary);
     overflow: hidden;
+    margin-top: -80px; /* ADD THIS LINE */
 }
 
 .background-image {
@@ -235,17 +247,9 @@ header nav {
     font-weight: 700;
 }
 
-.ornament-container {
-    position: absolute;
-    bottom: 5rem;
-    left: -100px;
-    z-index: 1; 
-}
-
 .ornament-container img {
     width: 300px;
     height: auto;
-    opacity: 0.2;
 }
 
 
@@ -394,14 +398,16 @@ header nav {
 
 .story-image {
     flex: 1;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4/4
 }
 
 .story-image img {
     width: 100%;
+    max-width: 642px;
     height: 100%;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 28, 63, 0.1);
+    display: block;
     object-fit: cover;
 }
 
@@ -667,7 +673,6 @@ footer {
 /* ------------------------------------------- */
 
 @media (max-width: 1024px) {
-    .testimonial-grid,
     .social-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablet */
     }
@@ -717,6 +722,10 @@ footer {
         font-size: 20px;
     }
 
+    .pagination-dots {
+        display: none;
+    }
+
     .riders-button {
         /* FIXED: Changed from absolute positioning to be part of the layout flow */
         position: relative;
@@ -764,7 +773,8 @@ footer {
     }
     
     /* UPDATED: One card per row for testimonials on mobile */
-    .testimonial-grid {
+    .testimonial-grid,
+    .how-it-works-grid { /* Combined rule for both card types */
         grid-template-columns: 1fr;
     }
 }
