@@ -9,8 +9,8 @@
 }
 
 :root {
-    --primary: #EEF5FA;      /* Your light background */
-    --secondary: #001C3F;    /* Your dark blue */
+    --primary: #EEF5FA;
+    --secondary: #001C3F;
     --comp-yellow: #FFE501;
     --comp-blue: #399CDB;
 }
@@ -21,7 +21,6 @@ body {
 }
 
 html {
-    /* This is the secret to smooth scrolling! */
     scroll-behavior: smooth;
 }
 
@@ -30,7 +29,6 @@ html {
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
-    /* UPDATED: Set side padding to 64px for more breathing room */
     padding-left: 4rem;
     padding-right: 4rem;
 }
@@ -41,23 +39,23 @@ html {
 
 .header {
     font-size: 48px;
-    font-weight: 700; /* Bold */
+    font-weight: 700;
 }
 
 .subheader {
     font-size: 28px;
-    font-weight: 500; /* Medium */
+    font-weight: 500;
 }
 
 .body-text {
     font-size: 16px;
-    font-weight: 500; /* Medium */
+    font-weight: 500;
     line-height: 1.6;
 }
 
 .button-text {
     font-size: 14px;
-    font-weight: 700; /* Bold */
+    font-weight: 700;
 }
 
 
@@ -68,21 +66,21 @@ html {
 header {
     background-color: var(--primary);
     color: var(--secondary);
-    position: absolute; /* CHANGE THIS to fixed */
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
     border-bottom: 1px solid rgba(0, 28, 63, 0.1);
-    transition: top 0.5s ease-in-out; /* ADD THIS LINE */
+    transition: top 0.3s ease-in-out;
 }
 
-/* NEW: This class is added by JavaScript to hide the header */
+/* This class is added by JavaScript to hide the header on scroll */
 .header-hidden {
-    top: -100px; /* Moves the header up and out of view */
+    top: -100px;
 }
 
+/* Offsets the main content to account for the fixed header */
 main {
-    /* This pushes the main content down so it doesn't start underneath the fixed header */
     padding-top: 80px;
 }
 
@@ -113,10 +111,11 @@ header nav {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    height: 2.5rem;
 }
 
 .logo-container img {
-    height: 2.5rem;
+    height: 100%;
 }
 
 .social-button {
@@ -137,6 +136,76 @@ header nav {
     border-color: var(--secondary);
 }
 
+/* Mobile Navigation Styles */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--secondary);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.mobile-nav-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+.mobile-nav-logo img {
+    height: 3rem;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-links li {
+    margin: 2rem 0;
+}
+
+.mobile-nav-links a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.mobile-nav-socials {
+    display: flex;
+    gap: 2rem;
+}
+
+.mobile-nav-socials img {
+    width: 32px;
+    height: 32px;
+}
+
 
 /* ---------------------------------- */
 /* 4. Hero Section                    */
@@ -147,7 +216,7 @@ header nav {
     height: 100vh;
     background-color: var(--secondary);
     overflow: hidden;
-    margin-top: -80px; /* ADD THIS LINE */
+    margin-top: -80px;
 }
 
 .background-image {
@@ -164,10 +233,10 @@ header nav {
 .gradient-overlay {
     position: absolute;
     inset: 0;
-    background-image: linear-gradient(to top, 
-        var(--secondary) 0%, 
-        rgba(0, 28, 63, 0.7) 30%, 
-        rgba(0, 28, 63, 0.4) 60%, 
+    background-image: linear-gradient(to top,
+        var(--secondary) 0%,
+        rgba(0, 28, 63, 0.7) 30%,
+        rgba(0, 28, 63, 0.4) 60%,
         transparent 100%
     );
 }
@@ -179,12 +248,13 @@ header nav {
     flex-direction: column;
     justify-content: flex-end;
     padding-bottom: 4rem;
+    z-index: 2;
 }
 
 .hero-text h1 {
     color: var(--comp-blue);
     font-weight: 700;
-    font-size: 48px; /* Kept as is from original design */
+    font-size: 48px;
     line-height: 1.1;
 }
 
@@ -195,13 +265,13 @@ header nav {
 
 .riders-button {
     position: absolute;
-    bottom: 3rem;
-    /* UPDATED: Aligned button with the new container padding */
+    bottom: 4rem;
     right: 4rem;
     color: var(--primary);
     padding: 0.75rem 1.5rem;
-    border-radius: 10px; 
+    border-radius: 10px;
     border: 1px solid var(--comp-yellow);
+    background-color: rgba(238, 245, 250, 0.1);
     backdrop-filter: blur(4px);
     text-decoration: none;
     transition: all 0.3s ease;
@@ -221,9 +291,8 @@ header nav {
 
 .problem-section {
     position: relative;
-    /* UPDATED: Solid background color */
-    background-color: var(--secondary); 
-    padding: 14rem 0; 
+    background-color: var(--secondary);
+    padding: 14rem 0;
     text-align: center;
     overflow: hidden;
 }
@@ -258,10 +327,8 @@ header nav {
 /* ---------------------------------- */
 
 .solution-section {
-    /* UPDATED: Gradient is now on this section */
-    background-image: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 31.7%);
-    /* UPDATED: Using padding to create the large scrollable area */
-    padding: 100vh 0 120px 0; 
+    background-image: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 30%);
+    padding: 22rem 0 12rem 0;
     position: relative;
     z-index: 2;
 }
@@ -298,15 +365,13 @@ header nav {
 }
 
 .solution-image img {
-    /* FIXED: This makes the image responsive and prevents overflow */
     width: 100%;
-    max-width: 642px; /* It won't get bigger than this */
+    max-width: 642px;
     height: auto;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 28, 63, 0.1);
-    /* Ensures image aligns with text in flexbox */
     display: block;
-    margin: 0 auto; /* Helps center if container is wider */
+    margin: 0 auto;
 }
 
 /* ---------------------------------- */
@@ -315,7 +380,7 @@ header nav {
 
 .how-it-works-section {
     background-color: var(--primary);
-    padding: 0 0 8rem 0; /* Padding top is handled by the section above */
+    padding: 2rem 0 10rem 0;
     text-align: center;
 }
 
@@ -331,29 +396,24 @@ header nav {
 }
 
 .how-it-works-card {
-    /* UPDATED: Styles from Figma, tweaked for final look */
     display: flex;
     flex-direction: column;
-    /* UPDATED: Align items to the start (left) */
     align-items: flex-start;
-    gap: 1rem; /* Adjusted gap */
+    gap: 1rem;
     padding: 2.5rem;
     border-radius: 20px;
     border: 1px solid var(--comp-blue);
-    /* UPDATED: Solid white background */
     background: #ffffff;
     box-shadow: 0 4px 20px 0 rgba(0, 28, 63, 0.20);
-    /* UPDATED: Text aligned left */
-    text-align: left; 
+    text-align: left;
 }
 
 .how-it-works-card svg {
     color: var(--secondary);
-    margin-bottom: 0.5rem; /* Adjusted spacing */
+    margin-bottom: 0.5rem;
 }
 
 .how-it-works-card h3 {
-    /* UPDATED: Typography from Figma guide */
     color: var(--secondary);
     font-size: 28px;
     font-weight: 500;
@@ -363,7 +423,6 @@ header nav {
 }
 
 .how-it-works-card .body-text {
-    /* UPDATED: Typography from Figma guide */
     color: var(--secondary);
     font-size: 16px;
     font-weight: 500;
@@ -377,7 +436,7 @@ header nav {
 
 .story-badge-section {
     background-color: var(--primary);
-    padding: 6rem 0;
+    padding: 8rem 0 0 8rem;
 }
 
 .story-badge-content {
@@ -398,7 +457,8 @@ header nav {
 
 .story-image {
     flex: 1;
-    aspect-ratio: 4/4
+    height: 400px;
+    overflow: hidden;
 }
 
 .story-image img {
@@ -408,6 +468,7 @@ header nav {
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 28, 63, 0.1);
     display: block;
+    /* Fills the container and crops the image without squishing it */
     object-fit: cover;
 }
 
@@ -417,7 +478,7 @@ header nav {
 
 .badges-section {
     background-color: var(--primary);
-    padding: 0 0 8rem 0;
+    padding: 4rem 0 12rem 0;
     text-align: center;
 }
 
@@ -426,7 +487,7 @@ header nav {
     justify-content: center;
     align-items: flex-start;
     gap: 4.5rem;
-    flex-wrap: wrap; /* Allows badges to wrap on smaller screens */
+    flex-wrap: wrap;
 }
 
 .badge-item {
@@ -434,8 +495,14 @@ header nav {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    max-width: 120px; /* Prevents items from becoming too wide */
+    max-width: 120px;
+    transition: transform 0.3s ease;
 }
+
+.badge-item:hover {
+    transform: scale(1.5);
+}
+
 
 .badge-item img {
     width: 120px;
@@ -471,10 +538,10 @@ header nav {
 
 .testimonial-card {
     display: flex;
-    padding: 2rem; /* 32px */
+    padding: 2rem;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem; /* 24px */
+    gap: 1.5rem;
     flex: 1 0 0;
     border-radius: 30px;
     border: 1px solid var(--comp-yellow);
@@ -484,7 +551,7 @@ header nav {
 }
 
 .testimonial-card .body-text {
-    flex-grow: 1; /* Allows text to take up space */
+    flex-grow: 1;
 }
 
 .testimonial-card .handle {
@@ -503,11 +570,11 @@ header nav {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #D9D9D9; /* A light grey for inactive dots */
+    background-color: #D9D9D9;
 }
 
 .dot.active {
-    background-color: var(--secondary); /* Dark blue for the active dot */
+    background-color: var(--secondary);
 }
 
 
@@ -532,7 +599,7 @@ header nav {
 
 .change-image img {
     width: 100%;
-    max-width: 390px; /* Match iPhone width */
+    max-width: 390px;
     height: auto;
     margin: 0 auto;
     display: block;
@@ -593,7 +660,7 @@ header nav {
 
 .social-section {
     background-color: var(--primary);
-    padding: 6rem 0;
+    padding: 1rem 0;
     text-align: center;
 }
 
@@ -604,7 +671,7 @@ header nav {
 
 .social-section .subheader {
     color: var(--secondary);
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -629,14 +696,37 @@ header nav {
 
 footer {
     background-color: var(--primary);
-    /* A neat trick for a patterned background using SVG */
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23001C3F' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
-    padding: 4rem 0 2rem 0;
+    padding: 8rem 0 2rem 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Creates the pattern layer behind the footer content */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/SVG/footer-pattern1.svg');
+    background-repeat: repeat-x;
+    background-position: -50px 0px;
+    background-size: auto 90%;
+    transform: rotate(1deg);
+    opacity: 0.1;
+    z-index: 0;
+}
+
+/* Ensures the footer content sits on top of the pattern */
+.footer-content {
+    position: relative;
+    z-index: 1;
 }
 
 .footer-logo img {
-    height: 3rem; /* 48px */
+    height: 3rem;
     margin-bottom: 2rem;
 }
 
@@ -657,8 +747,8 @@ footer {
 }
 
 .footer-socials img {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
 }
 
 .copyright {
@@ -672,12 +762,12 @@ footer {
 /* 14. Responsive Design (Mobile & Tablet)     */
 /* ------------------------------------------- */
 
+/* Tablet Styles */
 @media (max-width: 1024px) {
     .social-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablet */
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    /* UPDATED: One card per row for how-it-works on tablet */
     .how-it-works-grid {
         grid-template-columns: 1fr;
     }
@@ -687,31 +777,25 @@ footer {
     }
 }
 
+/* Mobile Styles */
 @media (max-width: 768px) {
-
     .container {
-        /* UPDATED: Adjusted mobile padding for consistency */
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
 
-    .logo-container img {
+    .logo-container {
         height: 2rem;
     }
 
-    .social-button {
-        padding: 0.4rem 0.75rem;
-        font-size: 12px;
-    }
-
-    /* FIXED: Shifts the hero image to focus on the left side on mobile */
     .background-image img {
         object-position: 14% 50%;
     }
 
-    /* FIXED: Creates space between the text and the button on mobile */
     .hero-content {
         gap: 1.5rem;
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .hero-text h1 {
@@ -727,28 +811,18 @@ footer {
     }
 
     .riders-button {
-        /* FIXED: Changed from absolute positioning to be part of the layout flow */
         position: relative;
         left: auto;
         right: auto;
         bottom: auto;
-        width: 100%; /* Make it full width to match design */
+        width: 100%;
         text-align: center;
     }
 
     .problem-section {
-        padding: 8rem 0;
+        padding: 6rem 0;
     }
 
-    .solution-section {
-        padding-top: 50vh; /* Adjust padding for mobile */
-        padding-bottom: 40vh;
-    }
-
-    .ornament-container {
-        display: none;
-    }
-    
     .solution-content {
         flex-direction: column;
         gap: 2rem;
@@ -757,29 +831,26 @@ footer {
     .header {
         font-size: 32px;
     }
-    
+
     .story-image {
         aspect-ratio: auto;
     }
-    
 
-    /* Stack story section on mobile */
     .story-badge-content {
         flex-direction: column;
     }
 
     .social-grid {
-        grid-template-columns: 1fr; /* Stack social posts on mobile */
+        grid-template-columns: 1fr;
     }
-    
-    /* UPDATED: One card per row for testimonials on mobile */
+
     .testimonial-grid,
-    .how-it-works-grid { /* Combined rule for both card types */
+    .how-it-works-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* NEW: Added a breakpoint for smaller phones like iPhone 14 */
+/* Smaller Mobile Styles */
 @media (max-width: 480px) {
     .container {
         padding-left: 1rem;
@@ -793,18 +864,13 @@ footer {
     .subheader {
         font-size: 18px;
     }
-    
+
     .hero-text h1 {
         font-size: 32px;
     }
 
     .problem-section {
-        padding: 6rem 0;
-    }
-
-    .solution-section {
-        padding-top: 30vh;
-        padding-bottom: 20vh;
+        padding: 4rem 0;
     }
 
     .how-it-works-card {
