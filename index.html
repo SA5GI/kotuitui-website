@@ -6,6 +6,7 @@
     <title>Kōtuitui - Auckland Transport</title>
     <link rel="stylesheet" href="https://use.typekit.net/hte3rmj.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -17,7 +18,8 @@
             <div class="logo-container">
                 <img src="img/AT_Logo_Ocean_RGB.png" alt="AT Logo">
             </div>
-            <a href="#" class="social-button">
+            <!-- UPDATED: Link now points to the social media section -->
+            <a href="#social" class="social-button">
                 Social Media
             </a>
         </nav>
@@ -36,7 +38,8 @@
                     <h1>KŌTUITUI</h1>
                     <p class="subheader">Celebrating people behind the wheel</p>
                 </div>
-                <a href="#" class="riders-button">
+                <!-- UPDATED: Link now points to the stories/testimonials section -->
+                <a href="#stories" class="riders-button">
                     Stories from Riders
                 </a>
             </div>
@@ -44,9 +47,6 @@
 
         <!-- PROBLEM STATEMENT SECTION -->
         <section class="problem-section">
-            <div class="ornament-container">
-                <img src="img/ornament spinning.svg" alt="Decorative swirl ornament">
-            </div>
             <div class="problem-content container">
                 <h2>The Road to Feeling Unsafe</h2>
                 <p class="subheader">
@@ -67,7 +67,6 @@
                     </p>
                 </div>
                 <div class="solution-image">
-                    <!-- IMPORTANT: Replace with your actual image path -->
                     <img src="img/solution-img.png" alt="A friendly bus driver wearing a mask and waving.">
                 </div>
             </div>
@@ -105,7 +104,156 @@
                 </div>
             </div>
         </section>
+
+        <!-- YOUR STORY, THEIR BADGE SECTION -->
+        <section class="story-badge-section">
+            <div class="story-badge-content container">
+                <div class="story-text">
+                    <h2 class="header">Your Story<br>Their Badge</h2>
+                    <p class="body-text">
+                        When you use the Meet Your Driver feature, you're not just giving a badge. You're showing support, recognising effort, and helping make Auckland's public transport safer and more positive. Every small action can turn a regular driver into a local hero.
+                    </p>
+                </div>
+                <div class="story-image">
+                    <img src='img/badgesimg.jpg' alt="Close-up of achievement badges on a driver's uniform shirt.">
+                </div>
+            </div>
+        </section>
+
+        <!-- BADGES SECTION -->
+        <section class="badges-section">
+            <div class="container">
+                <div class="badges-grid">
+                    <!-- Badge 1 -->
+                    <div class="badge-item">
+                        <img src="img/motion_final_badges-01.png" alt="Badge">
+                        <p>Kind Kiwi</p>
+                    </div>
+                    <!-- Badge 2 -->
+                    <div class="badge-item">
+                        <img src="img/motion_final_badges-02.png" alt="Badge">
+                        <p>Friendly Kiwi</p>
+                    </div>
+                    <!-- Badge 3 -->
+                    <div class="badge-item">
+                        <img src="img/motion_final_badges-03.png" alt="Badge">
+                        <p>Smooth Ride</p>
+                    </div>
+                    <!-- Badge 4 -->
+                    <div class="badge-item">
+                        <img src="img/motion_final_badges-04.png" alt="Badge">
+                        <p>Helping Hand</p>
+                    </div>
+                    <!-- Badge 5 -->
+                    <div class="badge-item">
+                        <img src="img/motion_final_badges-05.png" alt="Badge">
+                        <p>Calm and Collected</p>
+                    </div>
+                    <!-- Badge 6 -->
+                    <div class="badge-item">
+                        <img src="img/motion_final_badges-06.png" alt="Badge">
+                        <p>Local Legend</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section id="stories" class="testimonial-section">
+            <div class="container">
+                <h2 class="header">What passengers are saying</h2>
+                <div class="testimonial-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <p class="body-text">"Riding the bus felt impersonal until I met Mei. She remembers my name, asks how my day is going, and creates a welcoming atmosphere on every trip. I now actually look forward to my commute—it feels like a small community on wheels."</p>
+                        <p class="handle">@eemisurf</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <p class="body-text">"When I first started taking the bus, I felt anxious — but then I met Lani, my regular driver. She greets everyone with a smile, remembers faces, and makes the bus feel like a community. I've never felt safer on my commute."</p>
+                        <p class="handle">@talia_smth</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <p class="body-text">"I used to dread my morning bus ride, but meeting Tom changed everything. He's always friendly, checks in on regular passengers, and somehow makes the journey feel personal. It's the little gestures that make me feel looked after every day."</p>
+                        <p class="handle">@alec_bonds02</p>
+                    </div>
+                </div>
+                <!-- Pagination Dots -->
+                <div class="pagination-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- READY TO MAKE A CHANGE SECTION -->
+        <section class="change-section">
+            <div class="change-content container">
+                <div class="change-image">
+                    <img src="img/iPhone 14 Pro.png" alt="A screenshot of the AT mobile app showing the 'Meet Your Driver' feature.">
+                </div>
+                <div class="change-text">
+                    <h2 class="header">Ready to Make a Change?</h2>
+                    <p class="subheader">Join us in celebrating the people who go above and beyond to make our daily journey better.</p>
+                    <ol class="steps-list">
+                        <li>During your bus trip, open the AT Mobile app</li>
+                        <li>Use the Meet Your Driver feature to leave a review</li>
+                        <li>Give them a badge to show your appreciation</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOCIAL MEDIA SECTION -->
+        <section id="social" class="social-section">
+            <div class="container">
+                <h2 class="header">#KŌTUITUI</h2>
+                <p class="subheader">Join us as we share the positive stories that are making Auckland’s public transport a better place</p>
+                <div class="social-grid">
+                    <!-- Social Post 1 -->
+                    <div class="social-card">
+                        <img src="img/poster (2).jpg" alt="Social media post about driver badges.">
+                    </div>
+                    <!-- Social Post 2 -->
+                    <div class="social-card">
+                        <img src="img/poster (3).jpg" alt="Social media post showing an Auckland scene.">
+                    </div>
+                    <!-- Social Post 3 -->
+                    <div class="social-card">
+                        <img src="img/poster5.jpg" alt="Social media post encouraging users to share their story.">
+                    </div>
+                    <!-- Social Post 4 -->
+                    <div class="social-card">
+                        <img src="img/poster6.jpg" alt="Social media post with a positive message.">
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-logo">
+                <img src="img/AT_Logo_Ocean_RGB.png" alt="AT Logo">
+            </div>
+            <div class="footer-socials">
+                <a href="#"><img src="img/insta.png" alt="Instagram"></a>
+                <a href="#"><img src="img/tiktok.png" alt="TikTok"></a>
+                <a href="#"><img src="img/twitter.png" alt="X"></a>
+                <a href="#"><img src="img/reddit.png" alt="Reddit"></a>
+            </div>
+            <p class="copyright">&copy; 2025 KŌTUITUI</p>
+        </div>
+    </footer>
+
+    <!-- NEW: JavaScript for smooth scrolling -->
+    <script src="js/main.js"></script>
 
 </body>
 </html>
