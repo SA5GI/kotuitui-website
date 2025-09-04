@@ -436,7 +436,7 @@ header nav {
 
 .story-badge-section {
     background-color: var(--primary);
-    padding: 8rem 0 0 8rem;
+    /* FIXED: Changed padding to be symmetrical */
 }
 
 .story-badge-content {
