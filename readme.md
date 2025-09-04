@@ -25,9 +25,9 @@ HTML5: Utilized for the semantic structure and content of the website.
 
 CSS3: Employed for all styling, layout, and responsive design, incorporating modern features such as CSS Variables for efficient theme management.
 
-JavaScript (ES6): Used to handle all user interactions, including the smooth scroll functionality and the dynamic navigation bar.
+JavaScript: Used to handle all user interactions, including the smooth scroll functionality and the dynamic navigation bar.
 
-GSAP (GreenSock Animation Platform): A professional animation library implemented to create the high-quality smooth scrolling effect.
+GSAP: A professional animation library implemented to create the high-quality smooth scrolling effect.
 
 Adobe Fonts: Integrated to serve the "Gotham Narrow" typeface, ensuring brand consistency with the original design prototype.
 
@@ -38,22 +38,14 @@ The project is organized into a simple and maintainable directory structure:
 ├── index.html          # Main HTML document
 ├── css/
 │   └── style.css       # Primary stylesheet
-├── js/
-│   └── main.js         # Main JavaScript file for interactivity
+├── script.js           # Main JavaScript file for interactivity
 └── img/
     └── ...             # Directory for all image assets
 
 
 Local Development
-As this is a static front-end project with no server-side dependencies, it can be viewed locally by following these steps:
+Deployment
+This website is published using Netlify, a platform for hosting static sites. To view the live site, simply visit the deployed Netlify URL.
 
-Ensure all project files (index.html, css/, js/, img/) are located within the same root directory.
-
-Open the index.html file in any modern web browser.
-
-Asset Notes
-Images: All images within the img/ directory are currently placeholders based on the initial design. These should be replaced with final, optimized assets for production.
-
-Fonts: This project relies on Adobe Fonts to render the "Gotham Narrow" typeface. The provided Adobe Fonts stylesheet link in the <head> of index.html must be active for the typography to appear as intended.
 
 This project translates a high-fidelity Figma design into a fully functional and interactive web experience, with a focus on clean code, responsive design, and a professional user interface.
